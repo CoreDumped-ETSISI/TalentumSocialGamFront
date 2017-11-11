@@ -1,6 +1,6 @@
 <template>
     <el-row>
-        <el-col :span="14" :offset="5">
+        <el-col :span="16" :offset="4">
             <el-steps :active="active" finish-status="success" simple>
                 <el-step title="Paso 1"></el-step>
                 <el-step title="Paso 2"></el-step>
@@ -13,7 +13,7 @@
                 <el-button class="step_button" @click="next" type="primary">Siguiente</el-button>
             </div>
             <div v-if="active === 1">
-                <Step2/>
+                <Step2 v-on:saveUser="saveUserParent"/>
                 <el-button class="step_button" @click="next" type="primary">Siguiente</el-button>
             </div>
             <div v-if="active === 2">
@@ -55,7 +55,9 @@ export default {
     },
     data() {
         return {
-            active: 0
+            active: 0,
+            email: "",
+            password: ""
         };
     },
 
@@ -63,7 +65,23 @@ export default {
         next() {
             if (this.active++ > 4) this.active = 0;
             if(this.active > 4) this.$router.push('/sector');
+
+            //Storing values
+            if(this.active == 2){
+                sessionStorage.setItem('email', this.email);
+                sessionStorage.setItem('password', this.password);
+
+            }
+        },
+        saveUserParent(value) {
+            alert(value)
         }
+    },
+    created() {
+        this.$on('saveUser', function (_email) {
+            alert(this.email);
+            this.email = _email;
+        });
     }
 }
 </script>

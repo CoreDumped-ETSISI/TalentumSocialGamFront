@@ -6,12 +6,12 @@
                     <h1>Tu cuenta</h1>
                     <el-form ref="form" :model="form" label-width="120px" label-position="top">
                         <el-form-item label="Correo electronico">
-                            <el-input v-model="form.email" prop="email"></el-input>
+                            <el-input v-model="form.email" prop="email" v-on:input="change"></el-input>
                         </el-form-item>
                         <el-form-item label="Contrasena" class="label">
-                            <el-input v-model="form.password" type="password"></el-input>
+                            <el-input v-model="form.password" type="password" v-on:input="change"></el-input>
                         </el-form-item>
-                        <el-checkbox v-model="checked">Recuerdame</el-checkbox>
+                        <el-checkbox v-model="form.checked">Recuerdame</el-checkbox>
                     </el-form>
                 </div>
             </el-card>
@@ -25,14 +25,16 @@ export default{
     data() {
         return {
             form: {
-                name: '',
-                lastnames: ''
+                email: '',
+                password: '',
+                checked: ''
             }
         }
     },
     methods: {
-        onSubmit() {
-            console.log('submit!');
+        change() {
+            localStorage.setItem('email', this.form.email);
+            localStorage.setItem('password', this.form.password);
         }
     }
 }
