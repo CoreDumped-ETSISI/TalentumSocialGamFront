@@ -12,11 +12,20 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 30px;
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	margin: 10%;
+	vertical-align: middle;
+}
+
+body{
+	background-image: url("./assets/work.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: bottom;
+	background-size: cover;
 }
 </style>
