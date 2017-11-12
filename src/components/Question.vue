@@ -1,6 +1,5 @@
 <template>
-    <div class="row">
-        <el-row>
+    <el-row>
             <el-card class="box-card">
                 <div class="grid-content">
                     <!-- Contenido de la pregunta-->
@@ -24,9 +23,13 @@
                     <!-- Fin de la pregunta -->
                 </div>
             </el-card>
-            <el-button style="margin: 20px 0; font-size: 14pt;" type="info" plain>Contestar más tarde</el-button>
+            <div style="margin: 20px 0;">
+                <el-button-group class="full-width el-zoom-in-top">
+                    <el-button class="half-width font-medium" type="info" plain>Contestar más tarde</el-button>
+                    <el-button class="half-width font-medium" type="success" plain>Aceptar</el-button>
+                </el-button-group>
+            </div>
         </el-row>
-    </div>
 </template>
 
 <script>
@@ -40,15 +43,17 @@ export default{
   }
 </script>
 
-<style>
+<style scope>
 .el-row{
-    width: 95%;
-    padding-left: 10%;
+    width: 100%;
 }
 .el-button{
     width: 50%;
     font-size: 20pt;
     border-width: medium;
+}
+.half-width{
+    width: 50%;
 }
 .quarter{
     width: 25%;
@@ -70,5 +75,9 @@ export default{
 
 .full-width{
     width: 100%;
+}
+
+.font-medium{
+    font-size: 14pt;
 }
 </style>

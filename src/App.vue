@@ -19,6 +19,7 @@ export default {
 	color: #2c3e50;
 	margin: 10%;
 	vertical-align: middle;
+	min-width: 350px;
 }
 
 body{
