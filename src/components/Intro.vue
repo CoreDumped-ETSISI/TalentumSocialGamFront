@@ -1,34 +1,34 @@
 <template>
     <el-row>
-        <el-col :span="16" :offset="4">
-            <el-steps :active="active" finish-status="success" simple>
-                <el-step title="Paso 1"></el-step>
-                <el-step title="Paso 2"></el-step>
-                <el-step title="Paso 3"></el-step>
-                <el-step title="Paso 4"></el-step>
-                <el-step title="Paso 5"></el-step>
+        <el-steps :active="active" finish-status="success" simple>
+                <el-step title="Hola"></el-step>
+                <el-step title="Acceso"></el-step>
+                <el-step title="Tú"></el-step>
+                <el-step title="Foto"></el-step>
+                <el-step title="Teléfono"></el-step>
             </el-steps>
+        <el-col :span="16" :offset="4">
             <div v-if="active === 0">
                 <Step1/>
-                <el-button class="step_button" @click="next" type="primary">Siguiente</el-button>
+                <el-button class="step_button full-width" @click="next" type="primary">Siguiente</el-button>
             </div>
             <div v-if="active === 1">
                 <Step2 v-on:saveUser="saveUserParent"/>
-                <el-button class="step_button" @click="next" type="primary">Siguiente</el-button>
+                <el-button class="step_button full-width" @click="next" type="primary">Siguiente</el-button>
             </div>
             <div v-if="active === 2">
                 <Step3/>
-                <el-button class="step_button" @click="next" type="primary">Siguiente</el-button>
+                <el-button class="step_button full-width" @click="next" type="primary">Siguiente</el-button>
             </div>
             <div v-if="active === 3">
                 <Step4/>
-                <el-button type="info">Mas tarde</el-button>
-                <el-button class="step_button" @click="next" type="primary">Siguiente</el-button>
+                <el-button type="info" class=" width-48" >Mas tarde</el-button>
+                <el-button class="step_button  width-48" @click="next" type="primary">Siguiente</el-button>
             </div>
             <div v-if="active === 4">
                 <Step5/>
-                <el-button type="info">Mas tarde</el-button>
-                <el-button class="step_button" @click="next" type="primary">Siguiente</el-button>
+                <el-button type="info" class=" width-48">Mas tarde</el-button>
+                <el-button class="step_button width-48" @click="next" type="primary">Siguiente</el-button>
             </div>
             <div v-if="active === 5">
                 Bye
@@ -110,7 +110,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style >
+<style scope>
 .el-button{
     padding-top: 25px;
     padding-bottom: 25px;
@@ -129,6 +129,9 @@ export default {
 }
 .step_button{
     margin-top: 35px;
+}
+.width-48{
+    width: 48%;
 }
 </style>
 
