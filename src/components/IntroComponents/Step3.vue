@@ -1,11 +1,11 @@
 <template>
     <el-row>
-        <el-col :span="17" :offset="4">
+        <el-col>
             <el-card :body-style="{ padding: '0px' }">
                 <div style="padding: 14px;">
-                    <h1>Termina el registro</h1>
+                    <h1>Introduce tu nombre y apellidos</h1>
                     <el-form ref="form" :model="form" label-width="120px" label-position="top">
-                        <el-form-item label="Nombre">
+                        <el-form-item label="Nombre" class="label">
                             <el-input v-model="form.name" v-on:input='change'></el-input>
                         </el-form-item>
                         <el-form-item label="Apellidos" class="label">
@@ -38,3 +38,11 @@ export default{
     }
 }
 </script>
+
+<style scope>
+
+.el-form--label-top .el-form-item__label {
+    font-size: 24px;
+}
+
+</style>

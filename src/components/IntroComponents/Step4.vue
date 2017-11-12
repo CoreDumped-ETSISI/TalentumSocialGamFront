@@ -1,9 +1,13 @@
 <template>
     <el-row>
-        <el-col :span="17" :offset="4">
+        <el-col>
             <el-card :body-style="{ padding: '0px' }">
 
-                    <h1>Termina el registro</h1>
+                    <h1>Añade una foto</h1>
+                    <div 
+                        class="bottom clearfix description">
+                        Elige una fotografía tuya en la que no salga nadie más.
+                    </div>
                 <el-upload
                     class="upload-demo"
                     drag
@@ -13,8 +17,8 @@
                     :file-list="fileList"
                     multiple>
                     <i class="el-icon-upload"></i>
-                    <div class="el-upload__text">Arrastra el archivo aqui o<em> picha aqui</em></div>
-                    <div class="el-upload__tip" slot="tip">Archivos jpg/png con un tamano menor de 500kb</div>
+                    <div class="el-upload__text" style="font-size: 14pt; font-family: 'Varela Round'">Arrastra el archivo aquí o<em> picha aqui</em></div>
+                    <div class="el-upload__tip font-medium" slot="tip">Archivos jpg/png con un tamaño menor de 500kb</div>
                 </el-upload>
                 <div style="padding: 14px;">
                 </div>
@@ -41,3 +45,8 @@ export default{
     }
 }
 </script>
+
+
+<style scope>
+
+</style>

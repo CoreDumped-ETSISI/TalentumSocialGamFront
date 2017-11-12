@@ -53,12 +53,6 @@ export default{
     border-width: medium;
 }
 
-.half-width{    width: 50%;}
-.full-width{    width: 100%;}
-
-.font-medium{    font-size: 14pt;}
-.font-large{    font-size: 20pt;}
-
 .el-col {
     border-radius: 4px;
 }

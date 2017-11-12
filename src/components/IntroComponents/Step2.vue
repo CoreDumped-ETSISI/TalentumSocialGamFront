@@ -1,17 +1,18 @@
 <template>
     <el-row>
-        <el-col :span="17" :offset="4">
-            <el-card :body-style="{ padding: '0px' }">
+        <el-col>
+            <el-card >
                 <div style="padding: 14px;">
-                    <h1>Tu cuenta</h1>
+                    <h1>Acceso</h1>
+                    <div class="bottom clearfix description">Si no tienes una cuenta, introduce los datos que te gustaría usar.</div>
                     <el-form ref="form" :model="form" label-width="120px" label-position="top">
                         <el-form-item label="Correo electronico">
                             <el-input v-model="form.email" prop="email" v-on:input="change"></el-input>
                         </el-form-item>
-                        <el-form-item label="Contrasena" class="label">
+                        <el-form-item label="Contraseña" class="label">
                             <el-input v-model="form.password" type="password" v-on:input="change"></el-input>
                         </el-form-item>
-                        <el-checkbox v-model="form.checked">Recuerdame</el-checkbox>
+                        <el-checkbox v-model="form.checked" class="font-medium">Recuerdame</el-checkbox>
                     </el-form>
                 </div>
             </el-card>

@@ -1,12 +1,12 @@
 <template>
     <el-row>
-        <el-col :span="17" :offset="4">
+        <el-col>
             <el-card :body-style="{ padding: '0px' }">
-                <img src="https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif" class="image">
+                <span><h2>Di hola a tu futuro trabajo!</h2></span>
+                <img src="https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif" class="image hola-img">
                 <div style="padding: 14px;">
-                    <span><h2>Di hola a tu futuro trabajo!</h2></span>
                     <div class="bottom clearfix description">
-                        Sigue el proceso de registro con nosotros. 
+                    Vamos a iniciar sesión, si no tienes cuenta, haremos una nueva.
                     </div>
                 </div>
             </el-card>
@@ -23,6 +23,12 @@ export default{
 <style>
 .el-row{
     padding-top: 22px;
+}
+.hola-img{
+    min-width:250px;
+    width: 25%;
+    border-radius: 50%;
+
 }
 .description{
     padding-bottom: 10px;
