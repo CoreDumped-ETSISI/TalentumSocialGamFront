@@ -6,7 +6,7 @@
                     <h1>Termina el registro</h1>
                     <el-form ref="form" :model="form" label-width="120px" label-position="top">
                         <el-form-item label="Telefono">
-                            <el-input type='tel' v-model="form.phone"></el-input>
+                            <el-input type='tel' v-model="form.phone" v-on:input="change"></el-input>
                         </el-form-item>
                     </el-form>
                 </div>
@@ -26,10 +26,10 @@ export default{
             }
         }
     },
-    methods: {
-        onSubmit() {
-            console.log('submit!');
+     methods: {
+        change() {
+            localStorage.setItem('phone', this.form.phone);
         }
-    }
+   }
 }
 </script>
