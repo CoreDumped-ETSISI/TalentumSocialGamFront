@@ -68,9 +68,30 @@ export default {
 
             //Storing values
             if(this.active == 2){
-                sessionStorage.setItem('email', this.email);
-                sessionStorage.setItem('password', this.password);
 
+                this.email = localStorage.getItem("email")
+                this.password = localStorage.getItem("password")
+
+                var settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "http://52.166.126.249:3000/user/login",
+                    "method": "POST",
+                    "headers": {
+                        "content-type": "application/x-www-form-urlencoded"
+                    },
+                    "data": {
+                        "email": this.email,
+                        "password": this.password,
+                    }
+                }
+
+                $.ajax(settings).done(function (response) {
+                    this.$router.push('/ofertas');
+                    console.log(response);
+                }).fail(function (error){
+                    console.log(error.responseText);
+                });
             }
         },
         saveUserParent(value) {

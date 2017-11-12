@@ -1,7 +1,7 @@
 <template>
     <div>
         <el-row type="flex" class="row-bg" justify="center">
-        <h1 v-if="!any">Selecciona tus sectores</h1> <el-button @click="button_finish" v-else class="big space" type="primary">Terminar</el-button>
+            <h1 v-if="!any">Selecciona tus sectores</h1> <el-button @click="button_finish" v-else class="big space" type="primary">Terminar</el-button>
         </el-row>
         <el-row type="flex" class="row-bg" justify="center">
             <!--First button-->
@@ -148,35 +148,56 @@ export default{
             var image = "http://www.drunkmall.com/wp-content/uploads/2016/04/Dickhead-Mask.jpg";
 
             //Creating the Json
-            var jsonToSend = '{"email":"'+email+'", "password":"'+password+'", "firstname":"'+name+'", "surname":"'+lastnames+'", "phone":"'+phone+'", "avatarImage":"'+image+'", "industries":[';
+            var industries = '[';
 
             if(this.isAsisSan)
-                jsonToSend = jsonToSend + '"asistencia_sanitaria,"';
+                industries = industries + '"asistencia_sanitaria",';
             if(this.isTrans)
-                jsonToSend = jsonToSend + '"transportista,"';
+                industries = industries + '"transportista",';
             if(this.isRecursHum)
-                jsonToSend = jsonToSend + '"recursos_humanos,"';
+                industries = industries + '"recursos_humanos",';
             if(this.isConstr)
-                jsonToSend = jsonToSend + '"construccion,"';
+                industries = industries + '"construccion",';
             if(this.isManuf)
-                jsonToSend = jsonToSend + '"manufatura,"';
+                industries = industries + '"manufatura",';
             if(this.isMark)
-                jsonToSend = jsonToSend + '"marketing,"';
+                industries = industries + '"marketing",';
             if(this.isEdu)
-                jsonToSend = jsonToSend + '"educacion,"';
+               industries = industries + '"educacion",';
             if(this.isPeriod)
-                jsonToSend = jsonToSend + '"periodismo,"';
+                industries = industries + '"periodismo",';
             if(this.isArtes)
-                jsonToSend = jsonToSend + '"artes"';
+                industries = industries + '"artes"';
 
-            //HEREEEEE!!!!!!!!!!
-            //Get last element and check if it is an ","
-            //HEREEEEE!!!!!!!!!!
-            
-            jsonToSend = jsonToSend + "]}"
-            alert(jsonToSend);
-           //TODO: FINISH 
-            alert("Sending data... \n Not really")
+            if(industries.slice(-1) == ',') //If last element is a ", erase it
+                industries = industries.slice(0, -1);
+
+            industries = industries + ']'
+            console.log(industries)
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://52.166.126.249:3000/user/signup/",
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/x-www-form-urlencoded",
+                    "cache-control": "no-cache",
+                    "postman-token": "bb36f1b8-f073-577e-a794-64c48854f786"
+                },
+                "data": {
+                    "email": email,
+                    "password": password,
+                    "phone": phone,
+                    "avatarImage": image,
+                    "firstname": name,
+                    "surname": lastnames,
+                    "industries": industries
+                }
+            }
+
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
         }
     }
 }
