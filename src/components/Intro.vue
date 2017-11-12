@@ -38,6 +38,8 @@
 </template>
 
 <script>
+import router from '../router'
+
 import Step1 from './IntroComponents/Step1'
 import Step2 from './IntroComponents/Step2'
 import Step3 from './IntroComponents/Step3'
@@ -87,8 +89,8 @@ export default {
                 }
 
                 $.ajax(settings).done(function (response) {
-                    this.$router.push('/ofertas');
                     console.log(response);
+                    router.push('/ofertas');
                 }).fail(function (error){
                     console.log(error.responseText);
                 });

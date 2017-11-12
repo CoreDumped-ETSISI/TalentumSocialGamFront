@@ -26,14 +26,9 @@
 </template>
 
 <script>
-//import IndustryItem from './IndustryComponents/IndustryItem'
-
 export default{
-    name: 'Offer',
-    components:{
-        // IndustryItem
-    }
-  }
+    name: 'Offer'
+}
 </script>
 
 <style scope>
@@ -76,34 +71,34 @@ export default{
     height: 60px;
     line-height: 60px;
 }
-  
-  .el-aside {
+
+.el-aside {
     color: #333;
     text-align: center;
-  }
-  
-  .el-main {
+}
+
+.el-main {
     color: #333;
     text-align: center;
     padding: 20px;   
 
-  }
-  
-  body > .el-container {
+}
+
+body > .el-container {
     margin-bottom: 10px;
-  }
+}
 
-  
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
     line-height: 260px;
-  }
-  
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
+}
 
-  .el-card__body {
+.el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+}
+
+.el-card__body {
     padding: 0 20px;
-    }
+}
 </style>
