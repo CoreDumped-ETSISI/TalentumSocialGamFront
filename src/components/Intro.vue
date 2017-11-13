@@ -89,7 +89,8 @@ export default {
                 }
 
                 $.ajax(settings).done(function (response) {
-                    console.log(response);
+                    console.log(response.token);
+                    sessionStorage.setItem("token", response.token);
                     router.push('/ofertas');
                 }).fail(function (error){
                     console.log(error.responseText);
