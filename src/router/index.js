@@ -4,6 +4,7 @@ import Intro from '@/components/Intro'
 import Industry from '@/components/Industry'
 import Question from '@/components/Question'
 import Offers from '@/components/Offers'
+import Profile from '@/components/Profile'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/ofertas',
       name: 'Offers',
       component: Offers
+    },
+    {
+      path: '/perfil',
+      name: 'Profile',
+      component: Profile
     }
   ]
 })
