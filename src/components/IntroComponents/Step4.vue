@@ -48,5 +48,7 @@ export default{
 
 
 <style scope>
-
+.el-upload-list__item{
+    font-size: 16pt;
+}
 </style>

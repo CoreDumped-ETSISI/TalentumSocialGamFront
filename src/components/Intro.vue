@@ -30,9 +30,6 @@
                 <el-button type="info" class=" width-48">Mas tarde</el-button>
                 <el-button class="step_button width-48" @click="next" type="primary">Siguiente</el-button>
             </div>
-            <div v-if="active === 5">
-                Bye
-            </div>
         </el-col>
     </el-row>
 </template>
@@ -127,9 +124,6 @@ export default {
 }
 .step_button{
     margin-top: 35px;
-}
-.width-48{
-    width: 48%;
 }
 </style>
 
