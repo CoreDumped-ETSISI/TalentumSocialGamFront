@@ -1,39 +1,28 @@
 <template>
-    <div class="row">
-        <el-card>
+    <div class="row" >
+        <el-card >
             <el-row>
-                <h1>Título de oferta</h1>
-                <img src="../assets/Offer.jpeg" class="image offer-img">
-                <span><h2>Nombre empresa</h2></span>
+                <h1>{{title}}</h1>
+                <img v-bind:src="image" class="image offer-img">
+                <span><h2>Compania: {{company}}</h2></span>
             </el-row>
             <el-row>
                 <el-tag type="success" class="salario font-medium">
-                    <i class=" el-icon-check "></i> Salario</el-tag>
-                <el-tag type="success" class="ubicacion font-medium"><i class="el-icon-location"></i> Ubicación</el-tag>
+                    <i class=" el-icon-check "></i> {{salary}}$</el-tag>
+                <el-tag type="success" class="ubicacion font-medium"><i class="el-icon-location"></i> {{locationMap}}</el-tag>
             </el-row>
             <el-row>
-                <p>Descripción del puesto de trabajo.</p>
+                <p>{{description}}</p>
             </el-row>
         </el-card>
-        <div style="margin: 20px 0;">
-            <el-button-group class="full-width">
-                <el-button class="half-width font-medium" type="info" plain>
-                    <i class="el-icon-arrow-left"></i> Volver atrás</el-button>
-                <el-button class="half-width font-medium" type="success" plain><i class=" el-icon-message "></i> Solicitar entrevista</el-button>
-            </el-button-group>
-        </div>
     </div>
 </template>
 
 <script>
-//import IndustryItem from './IndustryComponents/IndustryItem'
-
 export default{
     name: 'Offer',
-    components:{
-        // IndustryItem
-    }
-  }
+    props: ['title', "description", 'image', 'company', 'salary', 'locationMap'],
+}
 </script>
 
 <style scope>
@@ -70,34 +59,39 @@ export default{
     height: 60px;
     line-height: 60px;
 }
-  
-  .el-aside {
+
+.el-aside {
     color: #333;
     text-align: center;
-  }
-  
-  .el-main {
+}
+
+.el-main {
     color: #333;
     text-align: center;
     padding: 20px;   
 
-  }
-  
-  body > .el-container {
+}
+
+body > .el-container {
     margin-bottom: 10px;
-  }
+}
 
-  
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
     line-height: 260px;
-  }
-  
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
+}
 
-  .el-card__body {
+.el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+}
+
+.el-card__body {
     padding: 0 20px;
-    }
+}
+.image{
+height: 100%; 
+width: 100%; 
+max-width: 400px;
+}
 </style>

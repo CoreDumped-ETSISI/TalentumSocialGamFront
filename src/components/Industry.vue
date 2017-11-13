@@ -151,7 +151,7 @@ export default{
             if(this.isMark)
                 industries = industries + '"marketing",';
             if(this.isEdu)
-               industries = industries + '"educacion",';
+                industries = industries + '"educacion",';
             if(this.isPeriod)
                 industries = industries + '"periodismo",';
             if(this.isArtes)
@@ -185,6 +185,9 @@ export default{
 
             $.ajax(settings).done(function (response) {
                 console.log(response);
+                sessionStorage.setItem("token", response.token);
+                router.push('/ofertas');
+
             });
         }
     }
