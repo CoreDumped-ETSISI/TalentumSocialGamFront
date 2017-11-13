@@ -20,7 +20,7 @@ export default{
 }
 </script>
 
-<style>
+<style scope>
 .el-row{
     padding-top: 22px;
 }

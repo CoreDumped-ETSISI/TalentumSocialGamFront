@@ -41,8 +41,5 @@ export default{
 
 <style scope>
 
-.el-form--label-top .el-form-item__label {
-    font-size: 24px;
-}
 
 </style>
