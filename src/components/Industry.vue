@@ -7,9 +7,9 @@
             <!--First button-->
             <el-button v-on:click="isAsisSan = !isAsisSan; anySelected()" class="no-borders" v-bind:class="{ active: isAsisSan}">
                 <el-col :span="8">
-                    <div class="sector">
+                    <div class="sector font-medium">
                         <img src="../assets/SectorIcons/salud.png" class="image sector-img">
-                        <h2>Asistencia sanitaria</h2>
+                        <h2>Salud</h2>
                     </div>
                 </el-col>
             </el-button>
@@ -17,7 +17,7 @@
             <!--Second button-->
             <el-button v-on:click="isTrans = !isTrans; anySelected()" class="no-borders" v-bind:class="{ active: isTrans }">
                 <el-col :span="8">
-                    <div class="sector">
+                    <div class="sector font-medium">
                         <img src="../assets/SectorIcons/transporte2.png" class="image sector-img">
                         <h2>Transporte</h2>
                     </div>
@@ -26,9 +26,9 @@
             <!--Third button-->
             <el-button v-on:click="isRecursHum = !isRecursHum; anySelected()" class="no-borders" v-bind:class="{ active: isRecursHum }">
                 <el-col :span="8">
-                    <div class="sector">
+                    <div class="sector font-medium">
                         <img src="../assets/SectorIcons/gente.png" class="image sector-img">
-                        <h2>Recursos humanos</h2>
+                        <h2>RRHH</h2>
                     </div>
                 </el-col>
             </el-button>
@@ -37,7 +37,7 @@
             <!--First button-->
             <el-button v-on:click="isConstr = !isConstr;anySelected()" class="no-borders" v-bind:class="{ active: isConstr }">
                 <el-col :span="8">
-                    <div class="sector">
+                    <div class="sector font-medium">
                         <img src="../assets/SectorIcons/construction2.png" class="image sector-img">
                         <h2>Construcción</h2>
                     </div>
@@ -47,7 +47,7 @@
             <!--Second button-->
             <el-button v-on:click="isManuf = !isManuf;anySelected()" class="no-borders" v-bind:class="{ active: isManuf }">
                 <el-col :span="8">
-                    <div class="sector">
+                    <div class="sector font-medium">
                        <img src="../assets/SectorIcons/manufacture.svg" class="image sector-img">
                         <h2>Manufacturas</h2>
                     </div>
@@ -56,7 +56,7 @@
             <!--Third button-->
             <el-button v-on:click="isMark = !isMark;anySelected()" class="no-borders" v-bind:class="{ active: isMark }">
                 <el-col :span="8">
-                    <div class="sector">
+                    <div class="sector font-medium">
                         <img src="../assets/SectorIcons/marketing.png" class="image sector-img">
                         <h2>Marketing</h2>
                     </div>
@@ -68,7 +68,7 @@
             <!--First button-->
             <el-button v-on:click="isEdu = !isEdu;anySelected()" class="no-borders" v-bind:class="{ active: isEdu }">
                 <el-col :span="8">
-                    <div class="sector">
+                    <div class="sector font-medium">
                         <img src="../assets/SectorIcons/education.png" class="image sector-img">
                         <h2>Educacion</h2>
                     </div>
@@ -78,7 +78,7 @@
             <!--Second button-->
             <el-button v-on:click="isPeriod = !isPeriod;anySelected()" class="no-borders" v-bind:class="{ active: isPeriod }">
                 <el-col :span="8">
-                    <div class="sector">
+                    <div class="sector font-medium">
                         <img src="../assets/SectorIcons/journalism.svg" class="image sector-img">
                         <h2>Periodismo</h2>
                     </div>
@@ -87,7 +87,7 @@
             <!--Third button-->
             <el-button v-on:click="isArtes = !isArtes;anySelected()" class="no-borders" v-bind:class="{ active: isArtes }">
                 <el-col :span="8">
-                    <div class="sector">
+                    <div class="sector font-medium">
                         <img src="../assets/SectorIcons/art.svg" class="image sector-img">
                         <h2>Artes</h2>
                     </div>
