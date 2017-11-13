@@ -11,10 +11,10 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Alegreya:400,500,700|Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Nunito|Varela+Round');
 
 #app {
-	font-family: 'Alegreya', serif;
+	font-family: 'Nunito', serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
