@@ -21,12 +21,13 @@
                     </el-button-group>
                 </div>
                 <!-- Fin de la pregunta -->
+                {{title}}
             </div>
         </el-card>
         <div style="margin: 20px 0;">
             <el-button-group class="full-width el-zoom-in-top">
                 <el-button class="half-width font-medium" type="info" plain>Contestar más tarde</el-button>
-                <el-button class="half-width font-medium" type="success" plain>Aceptar</el-button>
+                <el-button class="half-width font-medium" type="success" @click="loadQuestion" plain>Aceptar</el-button>
             </el-button-group>
         </div>
     </el-row>
@@ -39,23 +40,16 @@
         name: 'Question',
         data() {
             return{
-                binary: false
+                binary: false,
+                actualQuestion: 0,
+                title: ""
             }
         },
+        props: ['questions'],
         methods: {
             loadQuestion() {
-
-                var settings = {
-                    "async": true,
-                    "crossDomain": true,
-                    "url": "http://52.166.126.249:3000/getQuestions",
-                    "method": "GET",
-                    "headers": {}
-                }
-
-                $.ajax(settings).done(function (response) {
-                    console.log(response);
-                });
+                this.actualQuestion++;
+                this.title = this.questions[this.actualQuestion].question;
             },
         },
         mounted: function () {
