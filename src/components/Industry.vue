@@ -148,31 +148,28 @@ export default{
             var image = "http://www.drunkmall.com/wp-content/uploads/2016/04/Dickhead-Mask.jpg";
 
             //Creating the Json
-            var industries = '[';
+            var industries = [];
 
             if(this.isAsisSan)
-                industries = industries + '"asistencia_sanitaria",';
+                industries.push("asistencia_sanitaria");
             if(this.isTrans)
-                industries = industries + '"transportista",';
+                industries.push("transportista");
             if(this.isRecursHum)
-                industries = industries + '"recursos_humanos",';
+                industries.push("recursos_humanos");
             if(this.isConstr)
-                industries = industries + '"construccion",';
+                industries.push("construccion");
             if(this.isManuf)
-                industries = industries + '"manufatura",';
+                industries.push("manufatura");
             if(this.isMark)
-                industries = industries + '"marketing",';
+                industries.push("marketing");
             if(this.isEdu)
-                industries = industries + '"educacion",';
+                industries.push("educacion");
             if(this.isPeriod)
-                industries = industries + '"periodismo",';
+                industries.push("periodismo");
             if(this.isArtes)
-                industries = industries + '"artes"';
+                industries.push("artes");
 
-            if(industries.slice(-1) == ',') //If last element is a ", erase it
-                industries = industries.slice(0, -1);
 
-            industries = industries + ']'
             console.log(industries)
             var settings = {
                 "async": true,

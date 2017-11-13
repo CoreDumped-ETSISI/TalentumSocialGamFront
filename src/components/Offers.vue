@@ -23,7 +23,7 @@
         </div>
 
         <div class="row" v-else>
-            <Question></Question>
+            <Question :questions="questions"></Question>
         </div>
     </div>
 </template>
@@ -47,13 +47,13 @@ export default{
             image: "https://scontent-mad1-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/22277485_772392119600138_2211528147323584512_n.jpg",
             locationMap: "Universo",
             description: "Nada, olvidalo, es imposible... De ahi el salario infinito. \nPero gracias de todas formas",
-            id: "1"
+            id: "1",
+            questions: []
         };
     },
     methods: {
         loadOffer() {
 
-            console.log("Hola")
             var settings = {
                 "async": true,
                 "crossDomain": true,
@@ -64,10 +64,23 @@ export default{
                 }
             }
 
-            $.ajax(settings).done(function (response) {
-                console.log(response);
+            var self = this;
+            $.ajax(settings).done(function (r) {
+                self.setData(r.title, r.companyName, r.payout, r.image, r.locationMap, r.description, r.id, r.questions);
+                return r
+            }).fail(function (error){
+                console.log(error);
             });
-
+        },
+        setData(title, company, salary, image, locationMap, description, id, questions){
+            this.title = title;
+            this.company = company;
+            this.salary = salary;
+            this.image = image;
+            this.locationMap = locationMap;
+            this.description = description;
+            this.id = id;
+            this.questions = questions;
         },
         getQuestions() {
             this.watchingOffers = false;
