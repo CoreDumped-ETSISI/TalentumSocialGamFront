@@ -105,10 +105,11 @@ export default{
 
             $.ajax(settings).done(function (response) {
                 this.choosability = response.choosability;
-                if(this.choosability >= 95){
+                if(this.choosability >= 50){
                     //TODO
                     //You have been chosen
-                    console.log("You have been choosen");
+                    this.$emit('send', 'false')
+                    console.log("You haven been choosen");
                 }else
                     console.log("You haven't been choosen");
             }).fail(function (error){
