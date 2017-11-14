@@ -25,6 +25,21 @@
         <div class="row" v-else>
             <Question v-on:send="changeView" :questions="questions"></Question>
         </div>
+<el-button type="text" @click="dialogVisible = true">click to open the Dialog</el-button>
+        <!--From here to the end is the modal-->
+        <el-dialog
+             title="Medalla conseguida!"
+             :visible.sync="dialogVisible"
+             width="50%"
+             class="confetti font-large"
+             center>
+
+            <h2>Has conseguido la medalla del <b>novato</b></h2>
+            <img src='http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/reward-icon.png'/>
+            <span slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
+            </span>
+        </el-dialog>
     </div>
 </template>
 
@@ -48,7 +63,8 @@ export default{
             locationMap: "Universo",
             description: "Nada, olvidalo, es imposible... De ahi el salario infinito. \nPero gracias de todas formas",
             id: "1",
-            questions: []
+            questions: [],
+            dialogVisible: false
         };
     },
     methods: {
@@ -107,3 +123,12 @@ export default{
     }
 }
 </script>
+<style>
+.confetti{
+    background-image: url("https://media.giphy.com/media/138i1MiNVi9P0Y/200.gif")
+}
+
+.el-dialog__title{
+    font-size: 24px;   
+}
+</style>
