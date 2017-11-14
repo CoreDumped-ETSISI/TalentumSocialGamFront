@@ -163,6 +163,8 @@ export default{
         },
         logout(){
             sessionStorage.setItem("token", undefined);
+            sessionStorage.clear();
+            localStorage.clear();
             this.$router.push('/');
         }
     },
