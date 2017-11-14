@@ -73,12 +73,12 @@ export default{
     data() {
         return {
             watchingOffers: true,
-            title: "Buscar novia a Pi",
-            company: "Tinder",
-            salary: "Infinito",
-            image: "https://scontent-mad1-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/22277485_772392119600138_2211528147323584512_n.jpg",
-            locationMap: "Universo",
-            description: "Nada, olvidalo, es imposible... De ahi el salario infinito. \nPero gracias de todas formas",
+            title: "",
+            company: "",
+            salary: "",
+            image: "",
+            locationMap: "",
+            description: "",
             _id: "1",
             questions: [],
             dialogVisible: false,

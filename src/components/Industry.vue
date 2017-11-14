@@ -133,7 +133,7 @@ export default{
             var name = localStorage.getItem("name")
             var lastnames = localStorage.getItem("lastnames")
             var phone = localStorage.getItem("phone")
-            var image = "http://www.drunkmall.com/wp-content/uploads/2016/04/Dickhead-Mask.jpg";
+            var image = "http://www.pvhc.net/img240/uyttxprhsqycyximpzjb.png";
 
             //Creating the Json
             var industries = [];
