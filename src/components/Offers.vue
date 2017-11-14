@@ -119,6 +119,8 @@ export default{
             });
         },
         changeView(state){
+            if(state == "true")
+                this.dialogVisible = true;
             this.watchingOffers = true;
         },
         goHome(){

@@ -58,7 +58,16 @@ export default{
             this.actualQuestion++;
             if(this.actualQuestion > this.lenghtQuestion-1){
                 //Validate if he got hired
-                this.$emit('send', 'true')}
+                //TODO 
+                //Validate if it is its first time
+                if("firstCompany" in localStorage){
+                    console.log("Dentro");
+                this.$emit('send', 'false')
+                }else{
+                    localStorage.setItem("firstCompany", "false")
+                this.$emit('send', 'true')
+                }
+            }
             else{
                 //Previous answer
                 //Send data
