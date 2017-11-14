@@ -129,7 +129,7 @@
             </el-container>
         </el-card>
         <el-button type="info" class="width-45" >Volver</el-button>
-        <el-button class="width-45" type="danger">Cerrar sesión</el-button>
+        <el-button class="width-45" type="danger" @click="logout">Cerrar sesión</el-button>
     </div>
 </template>
 
@@ -156,10 +156,14 @@ export default{
             }
             var self = this;
             $.ajax(settings).done(function (response) {
-                console.log(response[0].avatarImage);
-                self.name = response[0].firstname;
-                self.image = response[0].avatarImage;
+                console.log(response);
+                self.name = response.firstname;
+                self.image = response.avatarImage;
             });
+        },
+        logout(){
+            sessionStorage.setItem("token", undefined);
+            this.$router.push('/');
         }
     },
     mounted: function () {

@@ -40,7 +40,7 @@
                 <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
             </span>
         </el-dialog>
-        <div id="floating-button">
+        <div id="floating-button" @click="goHome">
             <i class="el-icon-menu floating-menu"></i>
         </div>
     </div>
@@ -119,6 +119,9 @@ export default{
         },
         changeView(state){
             this.watchingOffers = true;
+        },
+        goHome(){
+            this.$router.push('/perfil');
         }
     },
     mounted: function () {
