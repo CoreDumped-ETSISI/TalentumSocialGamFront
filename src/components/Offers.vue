@@ -14,8 +14,8 @@
                     <el-button class="half-width font-medium" @click="getQuestions" type="success" plain>
                         <i class=" el-icon-message"></i> Solicitar entrevista
                     </el-button>
-                    <el-button class="half-width font-medium" type="info" plain>
-                        <i class="el-icon-arrow-right" @click="loadOffer"></i> Siguiente
+                    <el-button class="half-width font-medium" type="info" @click="loadOffer" plain>
+                        <i class="el-icon-arrow-right" ></i> Siguiente empresa
                     </el-button>
 
                 </el-button-group>
@@ -23,7 +23,7 @@
         </div>
 
         <div class="row" v-else>
-            <Question :questions="questions"></Question>
+            <Question v-on:send="changeView" :questions="questions"></Question>
         </div>
     </div>
 </template>
@@ -53,7 +53,6 @@ export default{
     },
     methods: {
         loadOffer() {
-
             var settings = {
                 "async": true,
                 "crossDomain": true,
@@ -98,6 +97,9 @@ export default{
             $.ajax(settings).done(function (response) {
                 console.log(response);
             });
+        },
+        changeView(state){
+            this.watchingOffers = true;
         }
     },
     mounted: function () {
