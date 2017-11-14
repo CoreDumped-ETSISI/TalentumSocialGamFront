@@ -25,14 +25,14 @@
         <div class="row" v-else>
             <Question v-on:send="changeView" :questions="questions"></Question>
         </div>
-<el-button type="text" @click="dialogVisible = true">click to open the Dialog</el-button>
+        <el-button type="text" @click="dialogVisible = true">click to open the Dialog</el-button>
         <!--From here to the end is the modal-->
         <el-dialog
-             title="Medalla conseguida!"
-             :visible.sync="dialogVisible"
-             width="50%"
-             class="confetti font-large"
-             center>
+                   title="Medalla conseguida!"
+                   :visible.sync="dialogVisible"
+                   width="50%"
+                   class="confetti font-large"
+                   center>
 
             <h2>Has conseguido la medalla del <b>novato</b></h2>
             <img src='http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/reward-icon.png'/>
@@ -40,6 +40,9 @@
                 <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
             </span>
         </el-dialog>
+        <div id="floating-button">
+            <i class="el-icon-menu floating-menu"></i>
+        </div>
     </div>
 </template>
 

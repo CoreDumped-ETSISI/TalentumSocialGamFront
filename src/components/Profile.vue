@@ -128,8 +128,8 @@
         </el-container>    
             </el-container>
         </el-card>
-        <el-button type="info" class=" width-48" >Volver atras</el-button>
-        <el-button class="width-48" type="primary">Siguiente</el-button>
+        <el-button type="info" class="width-45" >Volver</el-button>
+        <el-button class="width-45" type="danger">Cerrar sesión</el-button>
     </div>
 </template>
 
