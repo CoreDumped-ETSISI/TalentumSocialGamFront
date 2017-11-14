@@ -68,4 +68,45 @@ h1, h2, h3{
     font-size: 24px;
 }
 
+.blue-bg{ background-color: #409EFF}
+.red-bg{ background-color: #FA5555}
+.green-bg{ background-color: #67C23A}
+.yellow-bg{ background-color: #EB9E05}
+
+.rounded-corners{ border-radius: 5px; }
+.centered-w75{ 
+	width: 75%;
+	margin:auto;
+}
+
+#floating-button{
+	  width:90px;
+	  height: 90px;
+	  border-radius: 50%;
+	  border: 2px solid transparent;
+	  background: #FA5555;
+	  position: fixed;
+	  bottom: 45px;
+	  right: 45px;
+	  cursor: pointer;
+	  box-shadow: 0px 2px 5px #666;
+	  z-index: 450;
+}
+
+#floating-button:hover{
+	position: fixed;
+	box-shadow: 0px 2px 10px #BA3131;
+	border: 2px solid #BA3131;
+	-webkit-transition: background-color 0.4s, box-shadow 0.4s, border 0.4s; /* For Safari 3.1 to 6.0 */
+    transition: background-color 0.4s, box-shadow 0.4s, border 0.4s;
+    transition-timing-function: ease-in-out;
+	z-index: 450;
+}
+
+.floating-menu{
+  line-height: 90px;
+  font-size: 28pt;
+  color: white;
+  z-index: 500;
+}
 </style>

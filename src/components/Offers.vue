@@ -25,6 +25,9 @@
         <div class="row" v-else>
             <Question v-on:send="changeView" :questions="questions"></Question>
         </div>
+        <div id="floating-button">
+        <i class="el-icon-menu floating-menu"></i>
+    </div>
     </div>
 </template>
 
