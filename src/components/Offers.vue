@@ -25,7 +25,6 @@
         <div class="row" v-else>
             <Question v-on:send="changeView" :questions="questions"></Question>
         </div>
-        <el-button type="text" @click="dialogVisible = true">click to open the Dialog</el-button>
         <!--From here to the end is the modal-->
         <el-dialog
                    title="¡Medalla conseguida!"
@@ -85,7 +84,8 @@ export default{
 
             var self = this;
             $.ajax(settings).done(function (r) {
-                self.setData(r.title, r.companyName, r.payout, r.image, r.locationMap, r.description, r.id, r.questions);
+                console.log(r);
+                self.setData(r.title, r.companyName, r.payout, r.image, r.ubication, r.description, r.id, r.questions);
                 return r
             }).fail(function (error){
                 console.log(error);

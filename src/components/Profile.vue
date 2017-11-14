@@ -129,6 +129,7 @@
             </el-container>
         </el-card>
         <el-button type="info" class="width-45" >Volver</el-button>
+        <el-button type="primary" class="width-45" @click="goToOffers">Ofertas</el-button>
         <el-button class="width-45" type="danger" @click="logout">Cerrar sesión</el-button>
     </div>
 </template>
@@ -166,6 +167,9 @@ export default{
             sessionStorage.clear();
             localStorage.clear();
             this.$router.push('/');
+        },
+        goToOffers(){
+            this.$router.push('/ofertas');
         }
     },
     mounted: function () {
