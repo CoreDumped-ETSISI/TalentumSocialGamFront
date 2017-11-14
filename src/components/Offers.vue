@@ -28,21 +28,23 @@
         <el-button type="text" @click="dialogVisible = true">click to open the Dialog</el-button>
         <!--From here to the end is the modal-->
         <el-dialog
-                   title="Medalla conseguida!"
+                   title="¡Medalla conseguida!"
                    :visible.sync="dialogVisible"
                    width="50%"
                    class="confetti font-large"
                    center>
-
-            <h2>Has conseguido la medalla del <b>novato</b></h2>
-            <img src='http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/reward-icon.png'/>
+            <div class="text-centered font-large">Has conseguido el logro: <b>primeros pasos</b></div>
+            <img src='http://icons.iconarchive.com/icons/graphicloads/100-flat-2/256/reward-icon.png' class="img-center"/>
             <span slot="footer" class="dialog-footer">
-                <el-button type="primary" @click="dialogVisible = false">Confirm</el-button>
+                <el-button type="success" round @click="dialogVisible = false">¡Gracias!</el-button>
             </span>
         </el-dialog>
+
+        <!-- Botonsito -->
         <div id="floating-button">
             <i class="el-icon-menu floating-menu"></i>
         </div>
+        <!-- Fin del botonsito -->
     </div>
 </template>
 
@@ -131,7 +133,19 @@ export default{
     background-image: url("https://media.giphy.com/media/138i1MiNVi9P0Y/200.gif")
 }
 
-.el-dialog__title{
-    font-size: 24px;   
+.el-dialog__title {
+    font-size: 22pt;
+    font-weight: 700;
+}
+
+.img-center{
+    display: block;
+    margin: 20px  auto;
+    width: 40%;
+}
+
+.el-dialog--center .el-dialog__body {
+    text-align: initial;
+    padding: 0 30px;
 }
 </style>

@@ -43,6 +43,7 @@ h1, h2, h3{
 
 .text-centered{
 	text-align: center;
+	float: center;
 }
 .el-input__inner{
 	text-align: center;
