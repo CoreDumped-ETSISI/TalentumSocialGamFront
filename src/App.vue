@@ -37,6 +37,7 @@ h1, h2, h3{
 
 
 .width-48{    width: 48%;}
+.width-45{    width: 45%;}
 .half-width{    width: 50%;}
 .full-width{    width: 100%;}
 
