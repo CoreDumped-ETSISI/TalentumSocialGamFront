@@ -179,11 +179,12 @@ export default{
                     "industries": industries
                 }
             }
-
+            
+            var self = this;
             $.ajax(settings).done(function (response) {
                 console.log(response);
                 sessionStorage.setItem("token", response.token);
-                router.push('/ofertas');
+                self.$router.push('/ofertas');
 
             });
         }
