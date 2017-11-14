@@ -48,10 +48,11 @@ export default{
             image:"",
             binaryOption1:'',
             binaryOption2:'',
-            actualValue:''
+            actualValue:'',
+            choosability:'false'
         }
     },
-    props: ['questions', 'watchingOffers'],
+    props: ['questions', 'watchingOffers', '_id'],
     methods: {
         loadQuestion() {
 
@@ -61,11 +62,12 @@ export default{
                 //TODO 
                 //Validate if it is its first time
                 if("firstCompany" in localStorage){
-                    console.log("Dentro");
-                this.$emit('send', 'false')
+                    this.getIfUserApproveed();
+                    this.$emit('send', 'false')
                 }else{
+                    this.getIfUserApproveed();
                     localStorage.setItem("firstCompany", "false")
-                this.$emit('send', 'true')
+                    this.$emit('send', 'true')
                 }
             }
             else{
@@ -89,6 +91,29 @@ export default{
                 }
                 if(this.title == null) this.title = "Undefined"+this.actualQuestion
             }
+        },
+        getIfUserApproveed(){
+            var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "http://52.166.126.249:3000/offer/validate?_id="+this._id,
+                "method": "GET",
+                "headers": {
+                    "authorization": "Beacon "+sessionStorage.getItem('token')
+                }
+            }
+
+            $.ajax(settings).done(function (response) {
+                this.choosability = response.choosability;
+                if(this.choosability >= 95){
+                    //TODO
+                    //You have been chosen
+                    console.log("You have been choosen");
+                }else
+                    console.log("You haven't been choosen");
+            }).fail(function (error){
+                console.log(error)
+            });
         },
         sendAnswer(){
             var settings = {

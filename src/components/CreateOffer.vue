@@ -104,7 +104,7 @@
 
         <el-button style="margin-top:15px;" type="primary" @click="onSubmit">Enviar</el-button>
     </el-form>
-    <div id="floating-button">
+    <div id="floating-button" @click="goHome">
         <i class="el-icon-menu floating-menu"></i>
     </div>
 </div>
@@ -302,6 +302,9 @@ export default{
             $.ajax(settings).done(function (response) {
                 console.log(response);
             });
+        },
+        goHome(){
+            this.$router.push('/perfil');
         }
 
     }

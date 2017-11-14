@@ -23,7 +23,7 @@
         </div>
 
         <div class="row" v-else>
-            <Question v-on:send="changeView" :questions="questions"></Question>
+            <Question v-on:send="changeView" :questions="questions" :_id="_id"></Question>
         </div>
         <!--From here to the end is the modal-->
         <el-dialog
@@ -65,7 +65,7 @@ export default{
             image: "https://scontent-mad1-1.cdninstagram.com/t51.2885-15/sh0.08/e35/p640x640/22277485_772392119600138_2211528147323584512_n.jpg",
             locationMap: "Universo",
             description: "Nada, olvidalo, es imposible... De ahi el salario infinito. \nPero gracias de todas formas",
-            id: "1",
+            _id: "1",
             questions: [],
             dialogVisible: false
         };
@@ -84,21 +84,20 @@ export default{
 
             var self = this;
             $.ajax(settings).done(function (r) {
-                console.log(r);
-                self.setData(r.title, r.companyName, r.payout, r.image, r.ubication, r.description, r.id, r.questions);
+                self.setData(r.title, r.companyName, r.payout, r.image, r.ubication, r.description, r._id, r.questions);
                 return r
             }).fail(function (error){
                 console.log(error);
             });
         },
-        setData(title, company, salary, image, locationMap, description, id, questions){
+        setData(title, company, salary, image, locationMap, description, _id, questions){
             this.title = title;
             this.company = company;
             this.salary = salary;
             this.image = image;
             this.locationMap = locationMap;
             this.description = description;
-            this.id = id;
+            this._id = _id;
             this.questions = questions;
         },
         getQuestions() {
@@ -110,7 +109,7 @@ export default{
                 "method": "GET",
                 "headers": {},
                 "data": {
-                    "offerId": this.id
+                    "offerId": this._id
                 }
             }
 
