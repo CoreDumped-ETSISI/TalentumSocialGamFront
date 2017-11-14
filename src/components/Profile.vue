@@ -35,7 +35,7 @@
                     </el-row>
             </el-aside>    
             <el-main>
-                <el-tabs type="border-card" tab-position="left">
+                <el-tabs type="border-card" tab-position="top">
                     <el-tab-pane>
                         <span slot="label" class="font-medium">Datos personales <i class="el-icon-edit"></i> </span>
                         <el-form ref="form" :model="form" label-width="120px" label-position="top">
@@ -110,7 +110,7 @@
                     </el-tab-pane>
                     <el-tab-pane>
                         <span slot="label" class="font-medium"> Darse de baja <i class="el-icon-remove-outline"></i></span>
-                        <div class="tab-header">CUIDADO: Vas a eliminar tu cuenta</div>
+                        <div class="tab-header"><u>CUIDADO:</u> Vas a eliminar tu cuenta</div>
                         <el-form ref="form" :model="form" label-width="120px" label-position="top">
                             <el-form-item label="Contraseña"  class="input-text">
                                 <el-input  prop="text" v-on:input="change">
@@ -121,16 +121,16 @@
                                 </el-input>
                             </el-form-item>
                         </el-form>
-                        <el-button class="width-48" type="danger">darse de baja</el-button>
+                        <el-button class="width-48" type="danger">Darse de baja</el-button>
                     </el-tab-pane>
                 </el-tabs>
             </el-main>
         </el-container>    
             </el-container>
         </el-card>
-        <el-button type="info" class="width-45" >Volver</el-button>
-        <el-button type="primary" class="width-45" @click="goToOffers">Ofertas</el-button>
-        <el-button class="width-45" type="danger" @click="logout">Cerrar sesión</el-button>
+        <el-button type="info" class="width-30" >Volver</el-button>
+        <el-button type="primary" class="width-30" @click="goToOffers">Ofertas</el-button>
+        <el-button class="width-30" type="danger" @click="logout">Cerrar sesión</el-button>
     </div>
 </template>
 
@@ -179,8 +179,10 @@ export default{
 </script>
 
 <style scope>
+
 .user-img{
-    height: 15em;
+    width: 85% !important;
+    height: auto !important;
     box-shadow: 0 0.5em 0.5em #ccc;
     overflow: auto;
     border-radius: 10px;
@@ -204,7 +206,7 @@ export default{
     border-radius: 4px;
     font-family: "Varela Round";
     font-size: 24pt;
-    color: white;
+    color: white !important;
     height: 60px;
     line-height: 60px;
     vertical-align: middle;
@@ -213,10 +215,13 @@ export default{
     background-color:#BADCFF;
     font-size: 24pt;
 }
+.el-tabs__content{
+    min-height: 515px;
+}
 
 .input-text{
     padding: 20px;
-    border: 2pt solid #ccc;
+    border:none;
     background-color: #BADCFF;
     border-radius: 5px;
 }
@@ -232,6 +237,7 @@ export default{
     margin-top: 10px;
     padding: 10px;
     border-radius: 5px;
+    margin: 10px 0;
 }
 .badge>img{
     float:left;

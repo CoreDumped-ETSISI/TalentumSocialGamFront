@@ -36,10 +36,11 @@ h1, h2, h3{
 }
 
 
-.width-48{    width: 48%;}
-.width-45{    width: 45%;}
-.half-width{    width: 50%;}
-.full-width{    width: 100%;}
+.width-48{    width: 48% !important;}
+.width-30{    width: 30% !important;}
+.width-45{    width: 45% !important;}
+.half-width{    width: 50% !important;}
+.full-width{    width: 100% !important;}
 
 .text-centered{
 	text-align: center;

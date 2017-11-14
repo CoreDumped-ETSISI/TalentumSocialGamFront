@@ -131,7 +131,7 @@ export default{
     }
 }
 </script>
-<style>
+<style scope>
 .confetti{
     background-image: url("https://media.giphy.com/media/138i1MiNVi9P0Y/200.gif")
 }

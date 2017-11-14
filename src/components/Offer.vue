@@ -29,7 +29,6 @@ export default{
 .offer-img{
     width: 33.33%;
     min-width: 200px;
-    border-radius: 50%;
     padding: 5px;
 }
 .el-row{
