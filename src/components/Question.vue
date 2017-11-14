@@ -1,6 +1,6 @@
 <template>
     <el-row>
-        <el-card class="box-card">
+        <el-card class="box-card centered-w75">
             <div class="grid-content">
                 <!-- Contenido de la pregunta-->
                 <span><h2>{{title}}</h2></span>

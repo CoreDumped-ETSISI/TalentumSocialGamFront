@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="row" v-if="watchingOffers===true">
+        <div class="row centered-w75" v-if="watchingOffers===true">
             <Offer 
                          :title="title" 
                          :company="company" 
