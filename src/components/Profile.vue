@@ -1,21 +1,27 @@
 <template>
     <div class="row" >
         <el-card >
-                <h1>Perfil</h1>
             <el-container>
                 <el-header class="profile-header ">
                     <!--Contenido de la cabecera-->
-                    Nombre:  Néstor Javier Oubiña{{name}}
+                    Perfil de:  Néstor Javier Oubiña{{name}}
                 </el-header>
                 <el-container>
-                    <el-aside>
+                    <el-aside width="400px">
                         <!--Contenido del panel lateral-->
                         <img src="../assets/nestor.jpg" class="image user-img">
                         <el-row>
-                            <div style="padding: 1em;">
-                            <h2>Nivel actual</h2>
-                        </div>
+                            <div style="margin-top: 10px;">
+                            <h2>Logros</h2>
+                            </div>
+                            <div class="badge">
+                                <img src="../assets/SectorIcons/award-badge.svg"></img><span class="premio">Perfil completo</span>
+                            </div>
+                            <div class="badge">
+                                <img src="../assets/SectorIcons/award-badge.svg"></img><span class="premio">100 preguntas respondidas</span>
+                            </div>
                         </el-row>
+                        <!--
                         <el-row>
                                 <div style="padding: 1em;">
                                 <h2>Próximo nivel</h2>
@@ -25,23 +31,10 @@
                                     text-inside 
                                     :percentage="25"></el-progress>
                                 </div>
+                        -->
                             </el-row>
                         </el-aside>    
                     <el-main>
-                        <!--Contenido del panel principal-->
-                        <!-- ACORDEON
-                        <el-collapse accordion>
-                            <el-collapse-item title="Datos personales" name="1">
-                                <div>Introducir paneles de nuevos nombres y apellidos</div>
-                            </el-collapse-item>
-                            <el-collapse-item title="Correo electrónico" name="2">
-                                <div>Introducir paneles de nuevo correo electrónico</div>
-                            </el-collapse-item>
-                            <el-collapse-item title="Fotografía" name="3">
-                                <div>Introduce una nueva fotografía</div>
-                            </el-collapse-item>
-                        </el-collapse>
-                        -->
                         <el-tabs type="border-card" tab-position="left">
                             <el-tab-pane>
                                 <span slot="label" class="font-medium">Datos personales <i class="el-icon-edit"></i> </span>
@@ -94,7 +87,7 @@
                                         <div class="el-upload__text" style="font-size: 14pt; font-family: 'Varela Round'">Arrastra el archivo aquí o<em> picha aqui</em></div>
                                         <div class="el-upload__tip font-medium" slot="tip">Archivos jpg/png con un tamaño menor de 500kb</div>
                                     </el-upload>
-                                <el-button class="width-48" type="primary">Guardar cambios</el-button>
+                                <el-button class="width-48" style="margin-top:15px" type="primary">Guardar cambios</el-button>
                             </el-tab-pane>
                             <el-tab-pane>
                                 <span slot="label" class="font-medium"> Contraseña <i class="el-icon-more"></i></span>
@@ -185,7 +178,7 @@ export default{
 
 .input-text{
     padding: 20px;
-    border: 2pt solid #BADCFF;
+    border: 2pt solid #ccc;
     background-color: #BADCFF;
     border-radius: 5px;
 }
@@ -194,4 +187,25 @@ export default{
     font-size: 20pt;
 }
 
+.badge{
+    background-color: #E8F3FF;
+    border: 2px solid #ccc; 
+    box-shadow: 0px 5px 10px #ccc;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+.badge>img{
+    float:left;
+    margin: auto 5px;
+    width: 56px;
+}
+.badge>.premio{
+    height: 56px;
+    line-height: 56px;
+    font-size: 20px;
+    color: #2d2f33;
+    padding: 0 20px;
+        padding-left: 20px;
+}
 </style>
