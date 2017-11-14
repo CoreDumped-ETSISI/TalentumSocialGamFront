@@ -1,117 +1,113 @@
 <template>
-    <el-form ref="form" :model="form" label-width="120px">
-        <h1>Oferta</h1>
-        <el-form-item label="Titulo">
-            <el-input v-model="form.title"></el-input>
-        </el-form-item>
-        <el-form-item label="Descripcion">
-            <el-input v-model="form.description"></el-input>
-        </el-form-item>
-        <el-form-item label="Imagen">
-            <el-input v-model="form.image"></el-input>
-        </el-form-item>
-        <el-form-item label="Ciudad">
-            <el-input v-model="form.locationMap"></el-input>
-        </el-form-item>
-        <el-select v-model="industryValue" placeholder="Select">
-            <el-option
-                                           v-for="item in industries"
-                                           :key="item.value"
-                                           :label="item.label"
-                                           :value="item.value">
-            </el-option>
-        </el-select>
-        <el-form-item label="Salario">
-            <el-input v-model="form.industry"></el-input>
-        </el-form-item>
-        <el-form-item label="Empresa">
-            <el-input v-model="form.company"></el-input>
-        </el-form-item>
-        <!--Questions-->
-        <!--Question 1-->
-        <h1>Pregunta 1</h1>
+    <div>
+        <el-form ref="form" :model="form" label-width="25%">
+        <el-card class="centered-w75 text-centered">
+        <el-container >
+            <el-header height="75px" class="blue-bg rounded-corners font-medium" style="padding-right: 45px;">
+                <h1>Nueva oferta</h1>
+            </el-header>
+            <el-collapse v-model="activeName" accordion>
+              <el-collapse-item title="Detalles de la oferta" name="1">
+                    <div class="interior">
+                    <el-form-item label="Titulo">
+                        <el-input v-model="form.title" class="input-w75"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Descripcion">
+                        <el-input v-model="form.description" class="input-w75"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Imagen">
+                        <el-input v-model="form.image" class="input-w75"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Ciudad">
+                        <el-input v-model="form.locationMap" class="input-w75"></el-input>
+                    </el-form-item>
+                    <el-select v-model="industryValue" placeholder="Sector">
+                        <el-option
+                            v-for="item in industries"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                        </el-option>
+                    </el-select>
+                    <el-form-item label="Salario">
+                        <el-input v-model="form.industry" class="input-w75"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Empresa">
+                        <el-input v-model="form.company" class="input-w75"></el-input>
+                    </el-form-item>
+                </div>
+              </el-collapse-item>
+              <el-collapse-item title="Pregunta #1" name="2">
+                <div>        
+                    <h1>Introduce la primera pregunta</h1>
+                    <el-form-item label="Titulo pregunta">
+                        <el-input v-model="form.questionTitle1" class="input-w75"></el-input>
+                    </el-form-item>
+
+                    <el-form-item label="Imagen (url)">
+                        <el-input v-model="form.questionImage1" class="input-w75"></el-input>
+                    </el-form-item>
+                    
+
+                    <el-form-item label="Respuesta 1">
+                        <el-input v-model="form.answer11" class="input-w75"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Respuesta 2">
+                        <el-input v-model="form.answer12" class="input-w75"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Respuesta correcta">
+                        <el-input v-model="form.questionCorrectAnswer1" class="input-w75"></el-input>
+                    </el-form-item></div>
+              </el-collapse-item>
+              <el-collapse-item title="Pregunta #2" name="3">
+                <div><h1>Introduce la segunda pregunta</h1>
         <el-form-item label="Titulo pregunta">
-            <el-input v-model="form.questionTitle1"></el-input>
+            <el-input v-model="form.questionTitle2" class="input-w75"></el-input>
         </el-form-item>
 
         <el-form-item label="Imagen">
-            <el-input v-model="form.questionImage1"></el-input>
+            <el-input v-model="form.questionImage2" class="input-w75"></el-input>
         </el-form-item>
-        <el-select v-model="form.questionIndustryValue1" placeholder="Select">
-            <el-option
-                                                         v-for="item in industries"
-                                                         :key="item.value"
-                                                         :label="item.label"
-                                                         :value="item.value">
-            </el-option>
-        </el-select>
-
+        
         <el-form-item label="Respuesta 1">
-            <el-input v-model="form.answer11"></el-input>
+            <el-input v-model="form.answer21" class="input-w75"></el-input>
         </el-form-item>
         <el-form-item label="Respuesta 2">
-            <el-input v-model="form.answer12"></el-input>
+            <el-input v-model="form.answer22" class="input-w75"></el-input>
         </el-form-item>
         <el-form-item label="Respuesta correcta">
-            <el-input v-model="form.questionCorrectAnswer1"></el-input>
-        </el-form-item>
-        <!--Question 2-->
-        <h1>Pregunta 2</h1>
+            <el-input v-model="form.questionCorrectAnswer2" class="input-w75"></el-input>
+        </el-form-item></div>
+              </el-collapse-item>
+              <el-collapse-item title="Pregunta #3" name="4">
+                <div><h1>Introduce la tercera pregunta</h1>
         <el-form-item label="Titulo pregunta">
-            <el-input v-model="form.questionTitle2"></el-input>
+            <el-input v-model="form.questionTitle3" class="input-w75"></el-input>
         </el-form-item>
 
         <el-form-item label="Imagen">
-            <el-input v-model="form.questionImage2"></el-input>
+            <el-input v-model="form.questionImage3" class="input-w75"></el-input>
         </el-form-item>
-        <el-select v-model="form.questionIndustryValue2" placeholder="Select">
-            <el-option
-                                                         v-for="item in industries"
-                                                         :key="item.value"
-                                                         :label="item.label"
-                                                         :value="item.value">
-            </el-option>
-        </el-select>
-
         <el-form-item label="Respuesta 1">
-            <el-input v-model="form.answer21"></el-input>
+            <el-input v-model="form.answer31" class="input-w75"></el-input>
         </el-form-item>
         <el-form-item label="Respuesta 2">
-            <el-input v-model="form.answer22"></el-input>
+            <el-input v-model="form.answer32" class="input-w75"></el-input>
         </el-form-item>
         <el-form-item label="Respuesta correcta">
-            <el-input v-model="form.questionCorrectAnswer2"></el-input>
-        </el-form-item>
-        <!--Question 3-->
-        <h1>Pregunta 3</h1>
-        <el-form-item label="Titulo pregunta">
-            <el-input v-model="form.questionTitle3"></el-input>
-        </el-form-item>
+            <el-input v-model="form.questionCorrectAnswer3" class="input-w75"></el-input>
+        </el-form-item></div>
+              </el-collapse-item>
+            </el-collapse>
+            </el-container>
+        </el-card>        
 
-        <el-form-item label="Imagen">
-            <el-input v-model="form.questionImage3"></el-input>
-        </el-form-item>
-        <el-select v-model="form.questionIndustryValue3" placeholder="Select">
-            <el-option
-                                                         v-for="item in industries"
-                                                         :key="item.value"
-                                                         :label="item.label"
-                                                         :value="item.value">
-            </el-option>
-        </el-select>
-
-        <el-form-item label="Respuesta 1">
-            <el-input v-model="form.answer31"></el-input>
-        </el-form-item>
-        <el-form-item label="Respuesta 2">
-            <el-input v-model="form.answer32"></el-input>
-        </el-form-item>
-        <el-form-item label="Respuesta correcta">
-            <el-input v-model="form.questionCorrectAnswer3"></el-input>
-        </el-form-item>
-
-        <el-button type="primary" @click="onSubmit">Enviar</el-button>
+        <el-button style="margin-top:15px;" type="primary" @click="onSubmit">Enviar</el-button>
     </el-form>
+    <div id="floating-button">
+        <i class="el-icon-menu floating-menu"></i>
+    </div>
+</div>
 </template>
 
 <script>
@@ -119,6 +115,7 @@ export default{
     name: 'CreateOffer',
     data() {
         return {
+            activeName: '1',
             form: {
                 title: '',
                 company: '',
@@ -310,3 +307,38 @@ export default{
     }
 }
 </script>
+
+<style scope>
+.el-collapse-item__header{
+    background-color:#BADCFF;
+    border-radius: 5px;
+    font-size: 14pt;
+}
+.interior{
+    padding: 20px
+}
+
+.el-select{
+    padding-bottom: 25px;
+}
+.el-form-item__label{
+    font-size: 16pt;
+}
+
+.input-w75{
+    float: left;
+    width: 75%;
+}
+
+.el-select-dropdown__item{
+    font-size: 16pt;
+}
+
+.el-button{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 25px;
+}
+</style>
